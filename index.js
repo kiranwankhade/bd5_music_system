@@ -1,34 +1,10 @@
-// const express = require('express');
-// const cors = require('cors');
-// const { getAlbumsWithAssociations } = require('./controllers/helperFunctions');
-
-// const app = express();
-// app.use(cors());
-// app.use(express.json());
-
-// app.get('/albums', async (req, res) => {
-//   try {
-//     const albums = await getAlbumsWithAssociations();
-//     res.json({ albums });
-//   } catch (error) {
-//     console.error('Error in /albums route:', error);
-//     res.status(500).json({ error: 'Failed to fetch albums' });
-//   }
-// });
-
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
 
 const express = require("express");
 const sequelize = require("./lib/sequelize");
 const { Artist, Album, Genre, ArtistAlbum, AlbumGenre } = require("./models");
 const {
-  getAlbumGenre,
   getAlbumsWithAssociations,
 } = require("./controllers/helperFunctions");
-const albumGenre = require("./models/albumGenre");
 
 const app = express();
 app.use(express.json());
@@ -125,6 +101,7 @@ app.post("/albums/new", async (req, res) => {
 
     // Create the new album
     const albumData = await Album.create({ title, release_year });
+    console.log('albumData:', albumData)
 
     // Create associations if provided
     if (artistId) {
