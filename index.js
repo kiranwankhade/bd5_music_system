@@ -19,6 +19,16 @@ sequelize
     console.error("Unable to connect to the database:", err);
   });
 
+// Test DB connection
+app.get("/test-connection", async (req, res) => {
+  try {
+    await sequelize.authenticate();
+    res.send("Database connection successful");
+  } catch (error) {
+    res.status(500).send("Database connection failed");
+  }
+});
+
 // Define endpoints
 app.get("/album/sort-by-release-year", async (req, res) => {
   const order = req.query.order || "ASC";
