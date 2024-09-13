@@ -6,6 +6,8 @@ module.exports = {
       { albumId: 1, genreId: 1, createdAt: new Date(), updatedAt: new Date() },
       { albumId: 2, genreId: 2, createdAt: new Date(), updatedAt: new Date() },
       { albumId: 3, genreId: 3, createdAt: new Date(), updatedAt: new Date() },
+      { albumId: 4, genreId: 4, createdAt: new Date(), updatedAt: new Date() },
+      { albumId: 5, genreId: 5, createdAt: new Date(), updatedAt: new Date() },
     ]);
   },
 

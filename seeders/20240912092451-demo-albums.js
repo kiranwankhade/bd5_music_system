@@ -24,7 +24,21 @@ module.exports = {
         release_year: 2015,
         createdAt: new Date(),
         updatedAt: new Date(),
+      }, 
+      {
+        id: 4,
+        title: "After Hours",
+        release_year: 2020,
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
+      {
+        id: 5,
+        title: "Fine Line",
+        release_year: 2019,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      }
     ]);
   },
 
